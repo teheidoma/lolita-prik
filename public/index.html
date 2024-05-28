@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en" class="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="output.css">
+</head>
+<body class="flex flex-col w-full h-screen justify-end ">
+<h2 class="w-full text-center">HEADER</h2>
+<main class="flex-grow flex items-center">
+    <div id="prev" class="h-20 w-20 "><img width="50" height="50" src="https://img.icons8.com/ios/50/back--v1.png" alt="back--v1"/></div>
+    <div id="slider" class="h-full grow">
+        <div>
+            <div class="flex justify-center gap-10">
+                <img src="img/kiryu.webp" alt="">
+                <p class="text-center">
+                    Кірую. дуже сильний
+                </p>
+            </div>
+        </div>
+        <div>
+            <div class="flex justify-center gap-10">
+                <img src="img/majima.webp" alt="">
+                <p class="text-center">
+                    Маджіма. дуже смішний
+                </p>
+            </div>
+        </div>
+        <div>
+            <div class="flex justify-center gap-10">
+                <img src="img/monkey.jpg" alt="">
+                <p class="text-center">
+                    Я
+                </p>
+            </div>
+        </div>
+    </div>
+    <div id="next"><img width="50" height="50" src="https://img.icons8.com/ios/50/forward--v1.png" alt="forward--v1"/></div>
+</main>
+<div id="pagination" class="flex w-full justify-center pb-20 gap-14">
+
+    <!--    <div class="w-20 h-20 shadow-xl rounded-2xl">-->
+    <!--        <div class="absolute w-20 h-20 bg-gray-500 rounded-2xl opacity-70 hover:opacity-0 transition-opacity"></div>-->
+    <!--        <img class="w-full h-full rounded-2xl" src="img/majima.webp" alt="">-->
+    <!--    </div>-->
+
+    <!--    <div class="w-20 h-20 border shadow-xl rounded-2xl">1</div>-->
+</div>
+</body>
+<div class="activePanel"></div>
+<link type="text/css" href="jquery.bbslider.css" rel="stylesheet" media="screen">
+<script src="https://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript" src="jquery.bbslider.js"></script>
+<script>
+    $("#prev").on('click', ()=>{
+        $("#slider").bbslider("prev")
+    })
+    $("#next").on('click', ()=>{
+        $("#slider").bbslider("next")
+    })
+    var customPager = (num, id, title) => {
+        console.log(num, id, title)
+        var img = $('#slider img')[num - 1].src
+        return $(`
+            <div class="w-20 h-20 shadow-xl rounded-2xl">
+                <a href="#">
+                    <div class="absolute w-20 h-20 bg-gray-300 rounded-2xl opacity-70 hover:opacity-0 transition-opacity"></div>
+                    <img class="w-full h-full rounded-2xl" src="${img}" alt="">
+                </a>
+            </div>
+        `)
+    }
+
+    $("#slider").bbslider({
+        auto: true,
+        duration: 1000,
+        pager: true,
+        // autoHeight: false,
+        // dynamicHeight: true,
+        pagerWrap: '#pagination',
+        pagerText: customPager,
+        loop: true,
+        transition: 'slide'
+    })
+</script>
+</html>

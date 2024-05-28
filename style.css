@@ -1,0 +1,15 @@
+@import url('https://unpkg.com/css.gg@2.0.0/icons/css/arrow-long-right.css');
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .activePanel {
+        @apply scale-125;
+    }
+    .activePanel a div {
+        @apply opacity-0;
+    }
+}
