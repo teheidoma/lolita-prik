@@ -11,8 +11,25 @@
 <body class="flex flex-col w-full h-screen justify-end ">
 <h2 class="w-full text-center">HEADER</h2>
 <main class="flex-grow flex items-center">
-    <div id="prev" class="h-20 w-20 "><img width="50" height="50" src="https://img.icons8.com/ios/50/back--v1.png" alt="back--v1"/></div>
+    <div id="prev" class="h-20 w-20 "><img width="50" height="50" src="https://img.icons8.com/ios/50/back--v1.png"
+                                           alt="back--v1"/></div>
     <div id="slider" class="h-full grow">
+        <div>
+            <div class="text-center">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut ipsam, natus! A ab ad animi
+                    consectetur corporis doloremque esse, et excepturi iure laborum neque omnis quasi ut voluptas
+                    voluptates. Reiciendis!
+
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos ipsa provident qui repellat
+                    sunt totam voluptatem. Accusantium amet, ipsa libero magnam maiores modi nihil nisi, quis recusandae
+                    sit soluta sunt!
+                </p>
+                👍👍👍
+            </div>
+        </div>
         <div>
             <div class="flex justify-center gap-10">
                 <img src="img/kiryu.webp" alt="">
@@ -38,7 +55,8 @@
             </div>
         </div>
     </div>
-    <div id="next"><img width="50" height="50" src="https://img.icons8.com/ios/50/forward--v1.png" alt="forward--v1"/></div>
+    <div id="next"><img width="50" height="50" src="https://img.icons8.com/ios/50/forward--v1.png" alt="forward--v1"/>
+    </div>
 </main>
 <div id="pagination" class="flex w-full justify-center pb-20 gap-14">
 
@@ -55,21 +73,31 @@
 <script src="https://code.jquery.com/jquery-latest.js"></script>
 <script type="text/javascript" src="jquery.bbslider.js"></script>
 <script>
-    $("#prev").on('click', ()=>{
+    $("#prev").on('click', () => {
         $("#slider").bbslider("prev")
     })
-    $("#next").on('click', ()=>{
+    $("#next").on('click', () => {
         $("#slider").bbslider("next")
     })
-    var customPager = (num, id, title) => {
+    const customPager = (num, id, title) => {
         console.log(num, id, title)
-        var img = $('#slider img')[num - 1].src
+        let imgElem = ''
+        if (num === 1) {
+            imgElem = `<div class="w-full h-full flex justify-center items-center"><img width="35" height="35" src="https://img.icons8.com/ios-filled/50/home.png" alt="home"/></div>`
+        } else {
+            const page = $('#slider div div')[num - 1];
+            const img = $(page).children('img')[0];
+            console.log(img)
+            if (img) {
+                imgElem = `<img class="w-full h-full rounded-2xl" src="${img.src}" alt="">`;
+            }
+        }
         return $(`
             <div class="w-20 h-20 shadow-xl rounded-2xl">
-                <a href="#">
+                <a class="w-20 h-20" href="#">
                     <div class="absolute w-20 h-20 bg-gray-300 rounded-2xl opacity-70 hover:opacity-0 transition-opacity"></div>
-                    <img class="w-full h-full rounded-2xl" src="${img}" alt="">
                 </a>
+                ${imgElem}
             </div>
         `)
     }
