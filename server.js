@@ -5,7 +5,7 @@ const port = 3000
 
 app.use(express.json())
 
-app.use(express.static("public"))
+app.use(express.static("./"))
 
 app.use('/', function (req, res) {
     res.sendFile(path.resolve(__dirname, "public/index.html"))
