@@ -16,8 +16,9 @@
     <span class="hidden md:block">☆.。.:*・°☆.。.:*・° </span>
 </div>
 <main class="flex-grow flex items-center">
-    <div id="prev" class="hidden md:block h-20 w-20"><img width="50" height="50" src="https://img.icons8.com/ios/50/back--v1.png"
-                                          alt="back--v1"/></div>
+    <div id="prev" class="hidden md:block h-20 w-20"><img width="50" height="50"
+                                                          src="https://img.icons8.com/ios/50/back--v1.png"
+                                                          alt="back--v1"/></div>
     <div id="slider" class="h-full grow">
         <div>
             <div class="text-center">
@@ -36,58 +37,63 @@
             </div>
         </div>
     </div>
-    <div id="next" class="hidden md:block "><img width="50" height="50" src="https://img.icons8.com/ios/50/forward--v1.png" alt="forward--v1"/>
+    <div id="next" class="hidden md:block "><img width="50" height="50"
+                                                 src="https://img.icons8.com/ios/50/forward--v1.png" alt="forward--v1"/>
     </div>
 </main>
-<div id="pagination" class="hidden md:flex flex-wrap w-full justify-center pb-20 gap-5"></div>
+<div id="pagination" class="hidden md:flex flex-wrap w-full justify-center pb-20 px-10 gap-5"></div>
 </body>
 <div class="activePanel"></div>
 <link type="text/css" href="jquery.bbslider.css" rel="stylesheet" media="screen">
 <script src="https://code.jquery.com/jquery-latest.js"></script>
 <script type="text/javascript" src="jquery.bbslider.js"></script>
 <script>
-    $(window).on("resize", function(event){
 
-        console.log( $(this).width() );
-    });
-    $(document).on('ready', () => {
+    function onResize() {
+        $("#slider").bbslider("update")
+        console.log("resize")
+    }
+
+    function populateMedia() {
         $.getJSON('img/images.json', data => {
             data.forEach(img => {
                 $("#slider").append(
                     $(`<div>
-            <div class="flex flex-col md:flex-row justify-center gap-10">
-                <img src="img/${img.src}" alt="">
-                <p class="text-center">
-                    ${img.text}
-                </p>
-            </div>
-        </div>`)
-                )
+                            <div class="flex flex-col md:flex-row justify-center gap-10">
+                                <img src="img/${img.src}" alt="">
+                                <p class="text-center">
+                                    ${img.text}
+                                </p>
+                            </div>
+                        </div>`))
             })
             $('#slider').bbslider('update');
-
-            console.log(data)
         })
+    }
+
+    function bindButtons() {
         $("#prev").on('click', () => {
             $("#slider").bbslider("prev")
         })
         $("#next").on('click', () => {
             $("#slider").bbslider("next")
         })
-        const customPager = (num, id, title) => {
-            console.log(num, id, title)
-            let imgElem = ''
-            if (num === 1) {
-                imgElem = `<div class="w-full h-full flex justify-center items-center"><img width="35" height="35" src="https://img.icons8.com/ios-filled/50/home.png" alt="home"/></div>`
-            } else {
-                const page = $('#slider div div')[num - 1];
-                const img = $(page).children('img')[0];
-                console.log(img)
-                if (img) {
-                    imgElem = `<img class="w-full h-full rounded-2xl" src="${img.src}" alt="">`;
-                }
+    }
+
+    function createCustomPager(num, id, title) {
+        console.log(num, id, title)
+        let imgElem = ''
+        if (num === 1) {
+            imgElem = `<div class="w-full h-full flex justify-center items-center"><img width="35" height="35" src="https://img.icons8.com/ios-filled/50/home.png" alt="home"/></div>`
+        } else {
+            const page = $('#slider div div')[num - 1];
+            const img = $(page).children('img')[0];
+            console.log(img)
+            if (img) {
+                imgElem = `<img class="w-full h-full rounded-2xl" src="${img.src}" alt="">`;
             }
-            return $(`
+        }
+        return $(`
             <div class="w-20 h-20 shadow-xl rounded-2xl">
                 <a class="w-20 h-20" href="#">
                     <div class="absolute w-20 h-20 bg-gray-300 rounded-2xl opacity-70 hover:opacity-0 transition-opacity"></div>
@@ -95,10 +101,26 @@
                 ${imgElem}
             </div>
         `)
+    }
+
+    let mobile = $(window).width() < 768
+
+    $(window).on("resize", function (event) {
+        const w = $(window).width()
+        if (!mobile && w < 768) {
+            mobile = true
+            onResize()
+        } else if (mobile && w > 768) {
+            mobile = false
+            onResize()
         }
+    });
+
+    $(document).on('ready', () => {
+        populateMedia()
+        bindButtons()
 
         $("#slider").bbslider({
-            // auto: true,
             duration: 1000,
             pager: true,
             autoHeight: true,
@@ -106,7 +128,7 @@
             dragControls: true,
             dynamicHeight: true,
             pagerWrap: '#pagination',
-            pagerText: customPager,
+            pagerText: createCustomPager,
             loop: true,
             transition: 'slide'
         })
