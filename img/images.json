@@ -9,26 +9,7 @@
   },
   {
     "src": "Kart.gif",
-    "text": "testetestetse"
-  },
-  {"src": "HI.gif", "text": "testetestetse"},
-  {"src": "kiryu.webp", "text": "testetestetse"},
-  {"src": "kiryu.webp", "text": "testetestetse"},
-  {"src": "kiryu.webp", "text": "testetestetse"},
-  {"src": "kiryu.webp", "text": "testetestetse"},
-  {"src": "kiryu.webp", "text": "testetestetse"},
-  {"src": "kiryu.webp", "text": "testetestetse"},
-  {"src": "kiryu.webp", "text": "testetestetse"},
-  {"src": "kiryu.webp", "text": "testetestetse"},
-  {"src": "kiryu.webp", "text": "testetestetse"},
-  {"src": "kiryu.webp", "text": "testetestetse"},
-  {"src": "kiryu.webp", "text": "testetestetse"},
-  {"src": "kiryu.webp", "text": "testetestetse"},
-  {"src": "kiryu.webp", "text": "testetestetse"},
-  {"src": "kiryu.webp", "text": "testetestetse"},
-  {"src": "kiryu.webp", "text": "testetestetse"},
-  {"src": "kiryu.webp", "text": "testetestetse"},
-  {"src": "kiryu.webp", "text": "testetestetse"},
-  {"src": "kiryu.webp", "text": "testetestetse"},
-  {"src": "kiryu.webp", "text": "testetestetse"}
+    "text": "testetestetse",
+    "thumbnail": "Kart_static.jpg"
+  }
 ]

@@ -57,8 +57,19 @@
     function populateMedia() {
         $.getJSON('img/images.json', data => {
             data.forEach(img => {
-                $("#slider").append(
-                    $(`<div>
+                if (img.src.endsWith('.gif')) {
+                    $("#slider").append(
+                        $(`<div>
+                            <div>
+                                <div>
+                                    <img class="gif" src="img/${img.src.replace(".gif", "_static.jpg")}" alt="">
+                                </div>
+                            </div>
+                        </div>`))
+                    ;
+                } else {
+                    $("#slider").append(
+                        $(`<div>
                             <div class="flex flex-col md:flex-row justify-center gap-10">
                                 <img src="img/${img.src}" alt="">
                                 <p class="text-center">
@@ -66,8 +77,18 @@
                                 </p>
                             </div>
                         </div>`))
+                }
             })
             $('#slider').bbslider('update');
+            $('.gif').hover(function () {
+                let elem = $(this)
+                console.log(elem, elem.attr('src'))
+                elem.attr('src', elem.attr('src').replace('_static.jpg', ".gif"))
+            }, function (){
+                let elem = $(this)
+                console.log(elem, elem.attr('src'))
+                elem.attr('src', elem.attr('src').replace(".gif", '_static.jpg'))
+            })
         })
     }
 
@@ -85,6 +106,8 @@
         let imgElem = ''
         if (num === 1) {
             imgElem = `<div class="w-full h-full flex justify-center items-center"><img width="35" height="35" src="https://img.icons8.com/ios-filled/50/home.png" alt="home"/></div>`
+        // }else if ($($("#slider").children()[2]).find('.gif') != undefined) {
+        //     imgElem = `<div class="w-full h-full flex justify-center items-center"><img width="35" height="35" src="https://img.icons8.com/ios-filled/50/home.png" alt="home"/></div>`
         } else {
             const page = $('#slider div div')[num - 1];
             const img = $(page).children('img')[0];
