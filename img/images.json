@@ -1,11 +1,23 @@
 [
   {
     "src": "GMHN.gif",
+    "title": "Silent Hill 3",
+    "tags": [
+      {
+        "text": "HORROR",
+        "color": "red"
+      },
+      {
+        "text": "ANIME",
+        "color": "#fefe"
+      }
+    ],
     "text": "testetestetse"
   },
   {
     "src": "Runner.gif",
-    "text": "testetestetse"
+    "text": "testetestetse",
+    "explore": "runner.html"
   },
   {
     "src": "Kart.gif",

@@ -21,7 +21,7 @@
                                                           alt="back--v1"/></div>
     <div id="slider" class="h-full grow">
         <div>
-            <div class="text-center">
+            <div class="flex flex-col items-center text-center gap-5">
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut ipsam, natus! A ab ad animi
                     consectetur corporis doloremque esse, et excepturi iure laborum neque omnis quasi ut voluptas
@@ -34,6 +34,13 @@
                     sit soluta sunt!
                 </p>
                 👍👍👍
+                <div class="flex gap-3">
+                    <img width="32" height="32" src="https://img.icons8.com/sf-black/64/github.png" alt="github"/>
+                    <img width="32" height="32" src="https://img.icons8.com/sf-black/64/linkedin.png" alt="linkedin"/>
+                    <img width="32" height="32" src="https://img.icons8.com/windows/32/itch-io.png" alt="itch-io"/>
+                    <img width="32" height="32" src="https://img.icons8.com/badges/48/steam-circled.png"
+                         alt="steam-circled"/>
+                </div>
             </div>
         </div>
     </div>
@@ -57,32 +64,52 @@
     function populateMedia() {
         $.getJSON('img/images.json', data => {
             data.forEach(img => {
+                let explore = ''
+                let title = ''
+                let tags=''
+                let imgDiv=''
                 if (img.src.endsWith('.gif')) {
-                    $("#slider").append(
-                        $(`<div>
-                            <div>
-                                <img class="gif" src="img/${img.src.replace(".gif", "_static.jpg")}" alt="">
-                            </div>
-                        </div>`))
-                    ;
+                    imgDiv =`<img class="img gif" src="img/${img.src.replace(".gif", "_static.jpg")}" alt="">`;
                 } else {
-                    $("#slider").append(
-                        $(`<div>
+                    imgDiv = `<img class="img" src="img/${img.src}" alt="">`;
+                }
+                if (img.explore) {
+                    explore = `<span class="border rounded-2xl p-2 bg-blue-400 text-center"><a href='${img.explore}'>EXPLORE</a></span>`
+                }
+                if (img.tags) {
+                    tags = '<div class="flex gap-2 py-2">'
+                    img.tags.forEach(tag => {
+                        tags += `<span style="background-color: ${tag.color}" class="rounded-2xl px-2 shadow">${tag.text}</span>`
+                    })
+                    tags += '</div>'
+                    console.log("tags", tags)
+                }
+                if (img.title) {
+                    title = `<h2 class="font-bold text-2xl">${img.title}</h2>`
+                }
+
+                $("#slider").append(
+                    $(`<div>
                             <div class="flex flex-col md:flex-row justify-center gap-10">
-                                <img src="img/${img.src}" alt="">
-                                <p class="text-center">
-                                    ${img.text}
-                                </p>
+                                ${imgDiv}
+                                <div class="flex flex-col">
+                                    ${title}
+                                    ${tags}
+                                    <p class="w-full">
+                                        ${img.text}
+                                    </p>
+                                    ${explore}
+                                </div>
                             </div>
                         </div>`))
-                }
+                ;
             })
             $('#slider').bbslider('update');
             $('.gif').hover(function () {
                 let elem = $(this)
                 console.log(elem, elem.attr('src'))
                 elem.attr('src', elem.attr('src').replace('_static.jpg', ".gif"))
-            }, function (){
+            }, function () {
                 let elem = $(this)
                 console.log(elem, elem.attr('src'))
                 elem.attr('src', elem.attr('src').replace(".gif", '_static.jpg'))
@@ -104,13 +131,13 @@
         let imgElem = ''
         if (num === 1) {
             imgElem = `<div class="w-full h-full flex justify-center items-center"><img width="35" height="35" src="https://img.icons8.com/ios-filled/50/home.png" alt="home"/></div>`
-        // }else if ($($("#slider").children()[2]).find('.gif') != undefined) {
-        //     imgElem = `<div class="w-full h-full flex justify-center items-center"><img width="35" height="35" src="https://img.icons8.com/ios-filled/50/home.png" alt="home"/></div>`
+            // }else if ($($("#slider").children()[2]).find('.gif') != undefined) {
+            //     imgElem = `<div class="w-full h-full flex justify-center items-center"><img width="35" height="35" src="https://img.icons8.com/ios-filled/50/home.png" alt="home"/></div>`
         } else {
-            const page = $('#slider div div')[num - 1];
+            const page = $('#slider > div > div')[num - 1];
             const img = $(page).children('img')[0];
             console.log(img)
-            console.log("ss", page)
+            console.log("ss", num, img, page)
             if (img) {
                 imgElem = `<img class="w-full h-full rounded-2xl" src="${img.src}" alt="">`;
             }
