@@ -1,27 +1,54 @@
 [
   {
     "src": "GMHN.gif",
-    "title": "Silent Hill 3",
+    "title": "Ghost Moon High Noon (2024)",
     "tags": [
       {
-        "text": "HORROR",
-        "color": "red"
+        "text": "Level Design",
+        "color": "#FF5733"
       },
       {
-        "text": "ANIME",
+        "text": "3D Art",
         "color": "#fefe"
       }
     ],
-    "text": "testetestetse"
+    "text": "Had a chance to work on this project as an Art Lead, so my main task was to overview and, well, lead the production of the art assets and design quality. We collaborated closely with tech department on this, discussing possible ideas and setbacks that may arise, and I improved my Unity engine understanding by a whole lot, as well as strengthened my theoretical knowledge of level design (pathing, waypoints, visual cues, etc.). <ul><li><strong>Designed over 17 puzzles</strong></li> <li><strong>Level Set-Dressing</strong></li><li><strong>Created Custom Shader Nodes and HLSL Shaders</strong></li><li><strong>Modeled and Animated Over 16 Characters</strong></li><li><strong>Camera Setups and Cinemachine</strong></li></ul>",
+    "text": "<a href='https://store.steampowered.com/app/2936420/Ghost_Moon_High_Noon/'>Steam</a>"
   },
   {
     "src": "Runner.gif",
-    "text": "testetestetse",
+    "title": "Cyberlight Runner (2022)",
+    "tags": [
+      {
+        "text": "Level Design",
+        "color": "#FF5733"
+      },
+      {
+        "text": "3D Art & Animation",
+        "color": "#fefe"
+      }
+    ],
+    "text": "Designing the protagonist and level pathing for this game was my first experience with fast-paced parkour games, and sci-fi games in general. Keeping the look minimalistic and straight to the point was fairly challenging, as well as creating the environment and waypoints for the player. However, I take pride in this project. Me and the team worked hard to put all of the assets together and make the experience enjoyable, fun, and like something that keeps players focused and immersed in the game.",
     "explore": "runner.html"
   },
   {
     "src": "Kart.gif",
-    "text": "testetestetse",
+    "title": "Dismember Kart (2023)",
+    "tags": [
+      {
+        "text": "Level Design",
+        "color": "#FF5733"
+      },
+      {
+        "text": "2D Art",
+        "color": "#fefe"
+      },
+      {
+        "text": "VFX",
+        "color": "##FFF5EE"
+      }
+    ],
+    "text": "Creating a small racing game sounded like a boring idea at first, but it quickly became way more interesting after putting different mechanics into the cars themselves, and, of course, adding drift. This project helped me strenghen my coding skills and expanded my knowledge on level design for racing tracks. Main challenge was to design the tracks to not be entertaining in a single dimension, but make players ride upside down as well.",
     "thumbnail": "Kart_static.jpg"
   }
 ]
