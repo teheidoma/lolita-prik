@@ -74,12 +74,12 @@
                     imgDiv = `<img class="img" src="img/${img.src}" alt="">`;
                 }
                 if (img.explore) {
-                    explore = `<span class="border rounded-2xl p-2 bg-blue-400 text-center"><a href='${img.explore}'>EXPLORE</a></span>`
+                    explore = `<span class="border rounded-full p-2 bg-blue-400 text-center"><a href='${img.explore}'>EXPLORE</a></span>`
                 }
                 if (img.tags) {
                     tags = '<div class="flex gap-2 py-2">'
                     img.tags.forEach(tag => {
-                        tags += `<span style="background-color: ${tag.color}" class="rounded-2xl px-2 shadow">${tag.text}</span>`
+                        tags += `<span style="border-color: ${tag.color}" class="rounded-2xl px-2 shadow border">${tag.text}</span>`
                     })
                     tags += '</div>'
                     console.log("tags", tags)
@@ -90,7 +90,7 @@
 
                 $("#slider").append(
                     $(`<div>
-                            <div class="flex flex-col md:flex-row justify-center gap-10">
+                            <div class="p-3 md:p-0 flex overflow-y flex-col md:flex-row justify-center gap-10">
                                 ${imgDiv}
                                 <div class="flex flex-col">
                                     ${title}
@@ -139,13 +139,13 @@
             console.log(img)
             console.log("ss", num, img, page)
             if (img) {
-                imgElem = `<img class="w-full h-full rounded-2xl" src="${img.src}" alt="">`;
+                imgElem = `<img class="w-full h-full" src="${img.src}" alt="">`;
             }
         }
         return $(`
-            <div class="w-20 h-20 shadow-xl rounded-2xl">
+            <div class="w-20 h-20 shadow-xl">
                 <a class="w-20 h-20" href="#">
-                    <div class="absolute w-20 h-20 bg-gray-300 rounded-2xl opacity-70 hover:opacity-0 transition-opacity"></div>
+                    <div class="absolute w-20 h-20 bg-gray-300 opacity-70 hover:opacity-0 transition-opacity"></div>
                 </a>
                 ${imgElem}
             </div>
