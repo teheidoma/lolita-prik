@@ -6,40 +6,48 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link type="text/css" href="jquery.bbslider.css" rel="stylesheet" media="screen">
     <link rel="stylesheet" href="output.css">
 </head>
-<body class="flex flex-col w-full h-screen justify-end ">
-<div class="flex flex-col md:flex-row w-full justify-center items-center  pt-2 md:pt-10 gap-5">
+<body class="flex flex-col w-screen h-screen justify-end bg-gradient-to-br from-white to-gray-100 p-3 md:p-10">
+<div class="flex flex-col md:flex-row w-full justify-center items-center gap-2 md:gap-5">
     <span class="hidden md:block">°・*:.。.☆°・*:.。.☆</span>
     <h1 class="text-center text-3xl" style="font-family: Lobster,serif">Lolita game design </h1>
-    <span class="block md:hidden">͙⁺˚*•̩̩͙✩•̩̩͙*˚⁺‧͙⁺˚*•̩̩͙✩•̩̩͙*˚⁺‧͙⁺˚*•̩̩͙✩•̩̩͙*˚⁺‧⁺˚*•̩̩͙✩•̩̩͙*˚⁺‧͙⁺˚*•̩̩͙✩•̩̩͙*˚⁺‧͙⁺˚*•̩̩͙✩•̩̩͙*˚⁺‧͙</span>
+    <span class="block md:hidden text-nowrap overflow-hidden">͙⁺˚*•̩̩͙✩•̩̩͙*˚⁺‧͙⁺˚*•̩̩͙✩•̩̩͙*˚⁺‧͙⁺˚*•̩̩͙✩•̩̩͙*˚⁺‧⁺˚*•̩̩͙✩•̩̩͙*˚⁺‧͙⁺˚*•̩̩͙✩•̩̩͙*˚⁺‧͙⁺˚*•̩̩͙✩•̩̩͙*˚⁺‧͙</span>
     <span class="hidden md:block">☆.。.:*・°☆.。.:*・° </span>
 </div>
 <main class="flex-grow flex items-center">
     <div id="prev" class="hidden md:block h-20 w-20"><img width="50" height="50"
                                                           src="https://img.icons8.com/ios/50/back--v1.png"
                                                           alt="back--v1"/></div>
-    <div id="slider" class="h-full grow">
+    <div id="slider" class="h-full flex grow justify-center items-center">
         <div>
-            <div class="flex flex-col items-center text-center gap-5">
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut ipsam, natus! A ab ad animi
-                    consectetur corporis doloremque esse, et excepturi iure laborum neque omnis quasi ut voluptas
-                    voluptates. Reiciendis!
+            <div class="flex flex-col md:flex-row items-center text-center gap-2 p-2 md:gap-5 md:p-5 justify-evenly">
+                <img class="w-52 md:w-[300px]" src="https://external-preview.redd.it/QTratxVEd-4d0QTqWMokYGlCqWmhc2mNTxHd5b0C9-8.jpg?width=640&crop=smart&auto=webp&s=975286cebfa22f9c137aa8b48da86dc0ef1b0d2d"
+                     alt="">
+                <div class="flex flex-col items-center max-w-[500px]">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut ipsam, natus! A ab ad animi
+                        consectetur corporis doloremque esse, et excepturi iure laborum neque omnis quasi ut voluptas
+                        voluptates. Reiciendis!
 
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos ipsa provident qui repellat
-                    sunt totam voluptatem. Accusantium amet, ipsa libero magnam maiores modi nihil nisi, quis recusandae
-                    sit soluta sunt!
-                </p>
-                👍👍👍
-                <div class="flex gap-3">
-                    <img width="32" height="32" src="https://img.icons8.com/sf-black/64/github.png" alt="github"/>
-                    <img width="32" height="32" src="https://img.icons8.com/sf-black/64/linkedin.png" alt="linkedin"/>
-                    <img width="32" height="32" src="https://img.icons8.com/windows/32/itch-io.png" alt="itch-io"/>
-                    <img width="32" height="32" src="https://img.icons8.com/badges/48/steam-circled.png"
-                         alt="steam-circled"/>
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos ipsa provident qui
+                        repellat
+                        sunt totam voluptatem. Accusantium amet, ipsa libero magnam maiores modi nihil nisi, quis
+                        recusandae
+                        sit soluta sunt!
+                    </p>
+                    👍👍👍
+                    <div class="flex gap-3">
+                        <img width="32" height="32" src="https://img.icons8.com/sf-black/64/github.png" alt="github"/>
+                        <img width="32" height="32" src="https://img.icons8.com/sf-black/64/linkedin.png"
+                             alt="linkedin"/>
+                        <img width="32" height="32" src="https://img.icons8.com/windows/32/itch-io.png" alt="itch-io"/>
+                        <img width="32" height="32" src="https://img.icons8.com/badges/48/steam-circled.png"
+                             alt="steam-circled"/>
+                    </div>
                 </div>
             </div>
         </div>
@@ -48,10 +56,9 @@
                                                  src="https://img.icons8.com/ios/50/forward--v1.png" alt="forward--v1"/>
     </div>
 </main>
-<div id="pagination" class="hidden md:flex flex-wrap w-full justify-center pb-20 px-10 gap-5"></div>
+<div id="pagination" class="hidden md:flex flex-wrap w-full justify-center px-10 gap-5"></div>
 </body>
 <div class="activePanel"></div>
-<link type="text/css" href="jquery.bbslider.css" rel="stylesheet" media="screen">
 <script src="https://code.jquery.com/jquery-latest.js"></script>
 <script type="text/javascript" src="jquery.bbslider.js"></script>
 <script>
@@ -66,10 +73,10 @@
             data.forEach(img => {
                 let explore = ''
                 let title = ''
-                let tags=''
-                let imgDiv=''
+                let tags = ''
+                let imgDiv = ''
                 if (img.src.endsWith('.gif')) {
-                    imgDiv =`<img class="img gif" src="img/${img.src.replace(".gif", "_static.jpg")}" alt="">`;
+                    imgDiv = `<img class="img gif" src="img/${img.src.replace(".gif", "_static.jpg")}" alt="">`;
                 } else {
                     imgDiv = `<img class="img" src="img/${img.src}" alt="">`;
                 }
@@ -85,20 +92,20 @@
                     console.log("tags", tags)
                 }
                 if (img.title) {
-                    title = `<h2 class="font-bold text-2xl">${img.title}</h2>`
+                    title = `<h2 class="font-bold text-xl md:text-2xl">${img.title}</h2>`
                 }
 
                 $("#slider").append(
                     $(`<div>
-                            <div class="p-3 md:p-0 flex overflow-y flex-col md:flex-row justify-center gap-10">
+                            <div class="p-3 md:p-0 flex flex-col md:flex-row justify-center gap-10 ">
                                 ${imgDiv}
-                                <div class="flex flex-col">
+                                <div class="flex flex-col justify-between overflow-y-auto max-h-[420px]">
                                     ${title}
                                     ${tags}
                                     <p class="w-full">
                                         ${img.text}
                                     </p>
-                                    ${explore}
+                                ${explore}
                                 </div>
                             </div>
                         </div>`))
@@ -172,10 +179,10 @@
         $("#slider").bbslider({
             duration: 1000,
             pager: true,
-            autoHeight: true,
+            autoHeight: false,
             touch: true,
             dragControls: true,
-            dynamicHeight: true,
+            dynamicHeight: false,
             pagerWrap: '#pagination',
             pagerText: createCustomPager,
             loop: true,

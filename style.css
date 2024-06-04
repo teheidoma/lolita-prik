@@ -12,4 +12,16 @@
     .activePanel a div {
         @apply opacity-0;
     }
+    #slider .panel {
+        @apply h-full;
+    }
+    ul  {
+        @apply mx-3;
+    }
+    ul > li {
+        @apply text-red-950;
+    }
+    /*.bbslider-wrapper {*/
+    /*    @apply flex;*/
+    /*}*/
 }
