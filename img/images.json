@@ -10,6 +10,10 @@
       {
         "text": "3D Art",
         "color": "#fefe"
+      },
+      {
+        "text": "HLSL",
+        "color": "#20B2AA"
       }
     ],
     "text": "Had a chance to work on this project as an Art Lead, so my main task was to overview and, well, lead the production of the art assets and design quality. We collaborated closely with tech department on this, discussing possible ideas and setbacks that may arise, and I improved my Unity engine understanding by a whole lot, as well as strengthened my theoretical knowledge of level design (pathing, waypoints, visual cues, etc.). <ul class='list-disc font-semibold p-2'><li>Designed over 17 puzzles</li> <li>Level Set-Dressing</li><li>Created Custom Shader Nodes and HLSL Shaders</li><li>Modeled and Animated Over 16 Characters</li><li>Camera Setups and Cinemachine</li></ul><a href='https://store.steampowered.com/app/2936420/Ghost_Moon_High_Noon/'>Steam</a>"
@@ -25,6 +29,10 @@
       {
         "text": "3D Art & Animation",
         "color": "#fefe"
+      }
+      {
+        "text": "C#",
+        "color": "#20B2AA"
       }
     ],
     "text": "Designing the protagonist and level pathing for this game was my first experience with fast-paced parkour games, and sci-fi games in general. Keeping the look minimalistic and straight to the point was fairly challenging, as well as creating the environment and waypoints for the player. However, I take pride in this project. Me and the team worked hard to put all of the assets together and make the experience enjoyable, fun, and like something that keeps players focused and immersed in the game.\n<ul class='list-disc font-semibold p-2'>\n<li>Scripted AI Behavior</li>\n<li>Coded Projectile Targeting</li>\n<li>Designed a 5-Minute Minimum Level Pathing with Obstacles</li>\n<li>Created Sliding and Magnetizing Mechanics</li>\n</ul>",
@@ -44,10 +52,47 @@
       },
       {
         "text": "VFX",
-        "color": "##FFF5EE"
+        "color": "#FFF5EE"
       }
     ],
     "text": "Creating a small racing game sounded like a boring idea at first, but it quickly became way more interesting after putting different mechanics into the cars themselves, and, of course, adding drift. This project helped me strenghen my coding skills and expanded my knowledge on level design for racing tracks. Main challenge was to design the tracks to not be entertaining in a single dimension, but make players ride upside down as well.<ul class='list-disc font-semibold p-2'>\n<li>Made Drifting and Accelerating Mechanics</li>\n<li>Created a Pixel Shader in Unity</li>\n<li>Made VFX and Animations out of Sprite Sheets</li>\n<li>Developed Shrinking & Expanding Mechanics</li>\n</ul>",
     "thumbnail": "Kart_static.jpg"
+  },
+  {
+    "src": "Bloom.gif",
+    "title": "Celestial Bloom (2023)",
+    "tags": [
+      {
+        "text": "Level Design",
+        "color": "#FF5733"
+      },
+      {
+        "text": "3D Art",
+        "color": "#fefe"
+      },
+      {
+        "text": "BluePrints",
+        "color": "##20B2AA"
+      }
+    ],
+    "text": "My first experience with working in UE5, created this project from scratched and designed every corner and mechanic of the level: from documentation and layouts, to 3D models of rocks and time reversal mechanics. A small level about a scientist, who needs to gather alien flora and go back and forth in time. <ul class='list-disc font-semibold p-2'><li>Terrain Design</li> <li>UI Design</li><li>Puzzle Design</li>Pathing and Level Feel</li></ul>",
+    "thumbnail":"Screenshot 2023-12-01 174121"
+  },
+  {
+    "src": "HI.gif",
+    "title": "Hell Invaders (2021)",
+    "tags": [
+      {
+        "text": "UI",
+        "color": "#FF5733"
+      },
+      {
+        "text": "2D Art",
+        "color": "#fefe"
+      }
+    ],
+    "text": "A music synchronized game I worked on as a 2D Artist and Sprite Animator, in a pixelated style. <ul class='list-disc font-semibold p-2'><li>Painted over 10 sprites</li> <li>UI Design</li><li>Menu Transition Animations</li></ul> <a href='https://obvshi.itch.io/hell-invaders' itch.io </a>",
+    "thumbnail":"HI_Static"
   }
 ]
+
